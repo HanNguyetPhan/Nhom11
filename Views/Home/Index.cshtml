@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="themeSlider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#themeSlider" data-slide-to="1"></li>
+        <li data-target="#themeSlider" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgOverlay"></div>
+            <img style="height:320px;width:100%" src="../Images/banner-birthday-mkd-1004.jpg" alt="First slide">
+            <div class="carousel-caption">
+                <h3>Siêu sale sinh nhật!</h3>
+                <p>Khuyến mãi cực khủng chỉ có trong ngày hôm nay, nhanh tay hốt quà về nhà nào ~</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:320px;width:100%" src="../Images/banner-dealhotdauthang-1004.jpg" alt="Second slide">
+            <div class="carousel-caption">
+                <h3>Deal ngập tràn</h3>
+                <p>Khuyến mãi 9.9 giảm giá đến 50%, còn chần chờ gì nữa mà không mua ngay nhỉ ~</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:320px;width:100%" src="../Images/banner-do-choi.jpg" alt="Third slide">
+            <div class="carousel-caption">
+                <h3>Mừng đại lễ rinh quà liền tay</h3>
+                <p>Giảm giá 30% trên toàn bộ các sản phẩm có trong giỏ hàng, nhanh tay nào mọi người ơi ~</p>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#themeSlider" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#themeSlider" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+
+</div>
+<div class="olContent f1"><h2 style="color:black">Tìm kiếm Sản phẩm/Danh mục</h2></div>
+<div class="olSearch fr">
+    <input type="text" placeholder="Nhập từ khóa" name="searchKey" class="inputComn houseText form-control" />
+    <div class="searchIcon">
+        <button type="button" class="searchBtn">
+            <img src="~/Images/searchIcon.png" />
+        </button>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Sản phẩm <small>Theo xu hướng</small></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row product-container">
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+
+            <img class="img-responsive" title="Nhấn để xem chi tiết sản phẩm"
+                 style="cursor:pointer;height:160px;width:100%"
+                 src="~/Images/barbie.jpg" />
+
+            <div class="caption">
+                <h5>Hộp quà bí mật của barbie</h5>
+                <p>500.00 VNĐ</p>
+                <p>Có sẵn</p>
+                <div class="product-item-badge">Mới</div>
+            </div>
+        </div>
+    </div>
+</div>
