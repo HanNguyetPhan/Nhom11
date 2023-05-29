@@ -15,8 +15,6 @@ namespace OnlineToyStore
         static PaypalConfiguration()
         {
             var config = getconfig();
-            clientId = "AZ7U_tqVeK5-GsDRzPxbaGvBhfpAgyYVKpShLxMPedL4VRT8ZTC_5Z9ZLWjYH3zteugp-Z-ce3WXtU73";
-            clientSecret = "EPkY9c_xYC9AIuTzLe8fWdo_AzrpSw7Jd8TBodnk832fIc0-xndlbtvkNQjTdHAJemFmpAuaYh_vsfn7";
         }
 
         private static Dictionary<string, string> getconfig()
