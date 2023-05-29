@@ -106,3 +106,9 @@ D:\BT\Nhom11_MVC\OnlineToyStore\obj\Debug\OnlineToyStore.csproj.CoreCompileInput
 D:\BT\Nhom11_MVC\OnlineToyStore\obj\Debug\OnlineToyStore.csproj.CopyComplete
 D:\BT\Nhom11_MVC\OnlineToyStore\obj\Debug\OnlineToyStore.dll
 D:\BT\Nhom11_MVC\OnlineToyStore\obj\Debug\OnlineToyStore.pdb
+D:\BT\Nhom11_MVC\OnlineToyStore\bin\PagedList.dll
+D:\BT\Nhom11_MVC\OnlineToyStore\bin\PagedList.Mvc.dll
+D:\BT\Nhom11_MVC\OnlineToyStore\bin\PagedList.xml
+D:\BT\Nhom11_MVC\OnlineToyStore\bin\PagedList.Mvc.xml
+D:\BT\Nhom11_MVC\OnlineToyStore\bin\PayPal.dll
+D:\BT\Nhom11_MVC\OnlineToyStore\bin\PayPal.xml

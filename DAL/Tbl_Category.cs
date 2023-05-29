@@ -11,7 +11,7 @@ namespace OnlineToyStore.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Tbl_Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +19,12 @@ namespace OnlineToyStore.DAL
         {
             this.Tbl_Product = new HashSet<Tbl_Product>();
         }
-    
+
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsDelete { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Product> Tbl_Product { get; set; }
     }

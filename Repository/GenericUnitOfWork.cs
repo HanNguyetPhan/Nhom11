@@ -8,7 +8,7 @@ namespace OnlineToyStore.Repository
 {
     public class GenericUnitOfWork : IDisposable
     {
-        private dbMyOnlineShoppingEntities DBEntity = new dbMyOnlineShoppingEntities();
+        private dbMyOnlineShoppingEntities1 DBEntity = new dbMyOnlineShoppingEntities1();
         public IRepository<Tbl_EntityType> GetRepositoryInstance<Tbl_EntityType>() where Tbl_EntityType : class
         {
             return new GenericRepository<Tbl_EntityType>(DBEntity);

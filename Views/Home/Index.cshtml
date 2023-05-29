@@ -1,8 +1,11 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model OnlineToyStore.Models.Home.HomeIndexViewModel
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "MYKINGDOM";
 }
 
-<div id="themeSlider" class="carousel slide" data-ride="carousel">
+<div id="themeSlider" class="carousel slide" data-ride="carousel" >
     <ol class="carousel-indicators">
         <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
         <li data-target="#themeSlider" data-slide-to="1"></li>
@@ -45,15 +48,16 @@
 
 </div>
 <div class="olContent f1"><h2 style="color:black">Tìm kiếm Sản phẩm/Danh mục</h2></div>
-<div class="olSearch fr">
-    <input type="text" placeholder="Nhập từ khóa" name="searchKey" class="inputComn houseText form-control" />
-    <div class="searchIcon">
-        <button type="button" class="searchBtn">
-            <img src="~/Images/searchIcon.png" />
-        </button>
+<form method="post">
+    <div class="olSearch fr">
+        <input type="text" name="search" placeholder="Nhập từ khóa" class="inputComn form-control" />
+        <div class="searchIcon" >
+            <button type="submit" class="searchBtn" style ="background-color: #EE4E45">
+                <img  src="~/Images/searchIcon.png" />
+            </button>
+        </div>
     </div>
-
-</div>
+</form>
 
 <div class="row">
     <div class="col-md-12">
@@ -64,20 +68,48 @@
 </div>
 
 <div class="row product-container">
+    @foreach (var item in Model.ListOfProducts)
+    {
+        <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:300px">
 
-    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
-        <div class="thumbnail product-item" style="height:300px">
+                <img class="img-responsive" title="Click để Xem chi tiết sản phẩm"
+                     style="cursor:pointer;height:100%;width:100%"
+                     src="~/ProductImg/@item.ProductImage" />
 
-            <img class="img-responsive" title="Nhấn để xem chi tiết sản phẩm"
-                 style="cursor:pointer;height:160px;width:100%"
-                 src="~/Images/barbie.jpg" />
+                <div class="caption">
+                    <h5>@item.ProductName</h5>
+                    <p>@item.Price.000 VNĐ</p>
+                    <p>
+                        @if (item.Quantity > 0)
+                        {
+                            using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId, url = "Index" }, FormMethod.Post))
+                            {
+                                <button style='font-size: 20px; background-color: #EE4E45; color: azure' type="submit" class="pull-right"><i class="fa fa-shopping-cart"></i></button>
+                            }
+                        <p>Còn hàng</p>
+                    }
+                    else
+                    {
+                        <p>Hết hàng</p>
+                    }
+                        <div class="product-item-badge">
+                            @if (item.IsFeatured == true)
+                            {
+                                <p>Hàng mới về</p>
 
-            <div class="caption">
-                <h5>Hộp quà bí mật của barbie</h5>
-                <p>500.00 VNĐ</p>
-                <p>Có sẵn</p>
-                <div class="product-item-badge">Mới</div>
+                            }
+                            else
+                            {
+                                <p>Oder từ 5 -10 ngày</p>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        }
+</div>
+
+<div class="container">
+    @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
 </div>

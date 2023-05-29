@@ -41,10 +41,10 @@ namespace OnlineToyStore.Controllers
             return UpdateCategory(0);
         }
 
-        public ActionResult UpdateCategory(int categoryId)
+        public ActionResult UpdateCategory(int categoryId = 0)
         {
             CategoryDetail cd;
-            if (categoryId != null)
+            if (categoryId != 0)
             {
                 cd = JsonConvert.DeserializeObject<CategoryDetail>(JsonConvert.SerializeObject(_unitOfWork.GetRepositoryInstance<Tbl_Category>().GetFirstorDefault(categoryId)));
             }

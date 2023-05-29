@@ -1,6 +1,6 @@
 ﻿@model List<OnlineToyStore.DAL.Tbl_Category>
 @{
-    ViewBag.Title = "Categories";
+    ViewBag.Title = "Danh mục";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -9,17 +9,17 @@
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="../Admin/Dashboard">Bảng điều khiển</a>
         </li>
-        <li class="breadcrumb-item active">Categories</li>
+        <li class="breadcrumb-item active">Danh mục</li>
 
     </ol>
     <!-- DataTables Example -->
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-table"></i>
-            Category Details
-            <a href="../Admin/AddCategory" class="btn btn-info pull-right fa fa-plus">Add New</a>
+            Chi tiết danh mục
+            <a href="../Admin/AddCategory" class="btn btn-info pull-right fa fa-plus">Thêm mới</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -27,16 +27,16 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Category Name</th>
-                            <th>Action</th>
+                            <th>Tên danh mục</th>
+                            <th>Hành động</th>
 
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Category Name</th>
-                            <th>Action</th>
+                            <th>Tên danh mục</th>
+                            <th>Hành động</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -47,7 +47,7 @@
                                 <td>@(Model.IndexOf(item)+1)</td>
                                 <td>@item.CategoryName</td>
                                 <td>
-                                    @Html.ActionLink("Edit", "CategoryEdit", new { catId = item.CategoryId })
+                                    @Html.ActionLink("Chỉnh sửa", "CategoryEdit", new { catId = item.CategoryId })
                                 </td>
                             </tr>
                         }

@@ -12,9 +12,9 @@ namespace OnlineToyStore.Repository
     {
         DbSet<Tbl_Entity> _dbSet;
 
-        private dbMyOnlineShoppingEntities _DBEntity;
+        private dbMyOnlineShoppingEntities1 _DBEntity;
 
-        public GenericRepository(dbMyOnlineShoppingEntities DBEntity)
+        public GenericRepository(dbMyOnlineShoppingEntities1 DBEntity)
         {
             _DBEntity = DBEntity;
             _dbSet = _DBEntity.Set<Tbl_Entity>();
